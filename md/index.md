@@ -3,6 +3,8 @@
 
 ## Table of Contents
 
+[Chapter 0: Setting the Stage](./0.html)
+
 [Chapter 1: Invoking the Muse](./1.html)
 
 [Chapter 2: To Print or Not to Print](./2.html)
