@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>7</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Ex 7: Scroll of Caesar</h1>
+
+<p>On the fourth day, walking on the road to Seville, an eagle landed on the boy&#39;s arm. In a leather pouch tied to its legs was a scroll,  with a message from the Alchemist.</p>
+
+<div><pre class="line-numbers"><code class="language-text">Thirteen times of what you have Left, you owe Caesar
+Gur havirefr pbafcverf gb uryc gur Qernzre</code></pre></div>
+
+<p>The boy was puzzled. The first line was confusing. Caesar&#39;s Roman Empire was long gone. Surely the Alchemist meant something other than paying tax on the treasure he found! The garbled words on the second line made no sense either. </p>
+
+<p>Suddenly, intuition struck a chord. The Alchemist had once told him about <em>Caesar&#39;s Cypher</em>, a secret language that the Masters used to hide information in plain sight. The second line was garbled because it was encrypted with <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar&#39;s Cypher</a>. The cypher simply substituted each character in the plain text with another character, a fixed number of positions down the alphabet. &quot;Thirteen&quot; positions to the &quot;Left&quot;, to be precise. The first line of the message from the Alchemist was the hint. The second line was the result of this substitution, the encoded message.</p>
+
+<h2 id="toc_1">Coding Exercise</h2>
+
+<p>Just like in the previous chapter, we will proceed to write code, version by version. This approach has the tangential benefit of practice through repetition, which will help solidify the patterns of Elixir programming in our minds. </p>
+
+<p>We will also see how to break down a seemingly big problem into smaller and smaller sub-problems, solving these sub-problems and building up an overall solution from there.</p>
+
+<h3 id="toc_2">Version 0.1</h3>
+
+<p>In our first attempt at solving the problem of decoding a sentence using Caesar&#39;s cypher, we will focus on the smallest possible sub-problem first: decoding a <em>single</em> character.</p>
+
+<p>Type in the code listed below into your editor and observe the result; for yourselves.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule TextAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides text manipulation related functions.
+  &quot;&quot;&quot;
+
+  @doc &quot;&quot;&quot;
+  Rotates a single character by 13 positions.
+  &quot;&quot;&quot;
+  def rot13c(character) do
+
+    cond do
+      character == &quot;a&quot; -&gt; &quot;n&quot;
+      character == &quot;b&quot; -&gt; &quot;o&quot;
+      character == &quot;c&quot; -&gt; &quot;p&quot;
+      character == &quot;d&quot; -&gt; &quot;q&quot;
+      character == &quot;e&quot; -&gt; &quot;r&quot;
+      character == &quot;f&quot; -&gt; &quot;s&quot;
+      character == &quot;g&quot; -&gt; &quot;t&quot;
+      character == &quot;h&quot; -&gt; &quot;u&quot;
+      character == &quot;i&quot; -&gt; &quot;v&quot;
+      character == &quot;j&quot; -&gt; &quot;w&quot;
+      character == &quot;k&quot; -&gt; &quot;x&quot;
+      character == &quot;l&quot; -&gt; &quot;y&quot;
+      character == &quot;m&quot; -&gt; &quot;z&quot;
+      character == &quot;n&quot; -&gt; &quot;a&quot;
+      character == &quot;o&quot; -&gt; &quot;b&quot;
+      character == &quot;p&quot; -&gt; &quot;c&quot;
+      character == &quot;q&quot; -&gt; &quot;d&quot;
+      character == &quot;r&quot; -&gt; &quot;e&quot;
+      character == &quot;s&quot; -&gt; &quot;f&quot;
+      character == &quot;t&quot; -&gt; &quot;g&quot;
+      character == &quot;u&quot; -&gt; &quot;h&quot;
+      character == &quot;v&quot; -&gt; &quot;i&quot;
+      character == &quot;w&quot; -&gt; &quot;j&quot;
+      character == &quot;x&quot; -&gt; &quot;k&quot;
+      character == &quot;y&quot; -&gt; &quot;l&quot;
+      character == &quot;z&quot; -&gt; &quot;m&quot;
+      true             -&gt; :error
+    end
+  end
+
+end
+
+IO.puts &quot;Rotating &#39;a&#39; gives &#39;#{TextAlchemy.rot13c(&#39;a&#39;)}&#39;&quot;
+IO.puts &quot;Rotating &#39;b&#39; gives &#39;#{TextAlchemy.rot13c(&#39;b&#39;)}&#39;&quot;
+IO.puts &quot;Rotating &#39;m&#39; gives &#39;#{TextAlchemy.rot13c(&#39;m&#39;)}&#39;&quot;
+IO.puts &quot;Rotating &#39;n&#39; gives &#39;#{TextAlchemy.rot13c(&#39;n&#39;)}&#39;&quot;
+IO.puts &quot;Rotating &#39;A&#39; gives &#39;#{TextAlchemy.rot13c(&#39;A&#39;)}&#39;&quot;
+</code></pre></div>
+
+<h4 id="toc_3">Notes on Version 0.1</h4>
+
+<ol>
+<li><code>cond</code> is essentially <code>if</code>on steroids (i.e, a very powerful alternative to <code>if</code>). Whereas <code>if</code> helps us check for a single condition and execute an expression if the condition is true, <code>cond</code> is used when we have to check many different conditions and execute the corresponding expression of the condition that evaluates to true.</li>
+<li>Note that only one resulting expression is returned. <code>cond</code> checks the list of conditions in the written order and returns the expression of the first condition that evaluates to true.</li>
+<li>We have to add <code>true -&gt; :error</code> to the very end of the list of <code>condition -&gt; return value</code> lines, so as to handle the case when <em>none</em> of the previous conditions evaluates to true. Since <code>true</code> is always true (:D), <code>cond</code> will therefore always match and return <code>:error</code> in such cases. If we don&#39;t add this line, and no conditions match while running this code, Elixir will throw an error (<code>CondClauseError</code>).</li>
+<li>Even though in this particular code example, the conditions listed are very similar to each other, in the general case, <code>cond</code> can check for the <em>truth value</em> of any valid Elixir expression. (Side note: In computer science, expressions that evaluates to a boolean value, i.e, <code>true</code> or <code>false</code> are alternatively known as <strong>predicates</strong>.)</li>
+</ol>
+
+<h3 id="toc_4">Version 0.2</h3>
+
+<p>In our second iteration on solving the problem of decoding a sentence using Ceasar&#39;s cypher, we will improve upon our solution to decode a single <em>character</em> and then pick the next sub-problem to solve: decoding a <em>word</em>. </p>
+
+<p>Replace the previous code with the code listed below. Remember to type in all the code in by yourselves. Run the program and observe the result.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule TextAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides text manipulation related functions.
+  &quot;&quot;&quot;
+
+  @doc &quot;&quot;&quot;
+  Rotates a single character by 13 positions.
+  &quot;&quot;&quot;
+  def rot13c(character) do
+
+    case character do
+       &quot;a&quot; -&gt; &quot;n&quot;
+       &quot;b&quot; -&gt; &quot;o&quot;
+       &quot;c&quot; -&gt; &quot;p&quot;
+       &quot;d&quot; -&gt; &quot;q&quot;
+       &quot;e&quot; -&gt; &quot;r&quot;
+       &quot;f&quot; -&gt; &quot;s&quot;
+       &quot;g&quot; -&gt; &quot;t&quot;
+       &quot;h&quot; -&gt; &quot;u&quot;
+       &quot;i&quot; -&gt; &quot;v&quot;
+       &quot;j&quot; -&gt; &quot;w&quot;
+       &quot;k&quot; -&gt; &quot;x&quot;
+       &quot;l&quot; -&gt; &quot;y&quot;
+       &quot;m&quot; -&gt; &quot;z&quot;
+       &quot;n&quot; -&gt; &quot;a&quot;
+       &quot;o&quot; -&gt; &quot;b&quot;
+       &quot;p&quot; -&gt; &quot;c&quot;
+       &quot;q&quot; -&gt; &quot;d&quot;
+       &quot;r&quot; -&gt; &quot;e&quot;
+       &quot;s&quot; -&gt; &quot;f&quot;
+       &quot;t&quot; -&gt; &quot;g&quot;
+       &quot;u&quot; -&gt; &quot;h&quot;
+       &quot;v&quot; -&gt; &quot;i&quot;
+       &quot;w&quot; -&gt; &quot;j&quot;
+       &quot;x&quot; -&gt; &quot;k&quot;
+       &quot;y&quot; -&gt; &quot;l&quot;
+       &quot;z&quot; -&gt; &quot;m&quot;
+       _   -&gt; :error
+    end
+  end
+
+  @doc &quot;&quot;&quot;
+  Applies the rot13c function to all characters in a word
+  &quot;&quot;&quot;
+  def rot13w(word) do
+
+   word
+   |&gt; String.downcase
+   |&gt; String.graphemes
+   |&gt; Enum.map(&amp;rot13c/1)
+   |&gt; Enum.into(&quot;&quot;)
+
+  end
+
+end
+
+IO.inspect TextAlchemy.rot13w(&quot;abcd&quot;)
+IO.inspect TextAlchemy.rot13w(&quot;NoPq&quot;)
+# Decoding the first word on the second line of the Alchemist&#39;s message
+IO.inspect TextAlchemy.rot13w(&quot;Gur&quot;)
+</code></pre></div>
+
+<h4 id="toc_5">Notes on Version 0.2</h4>
+
+<ol>
+<li>Notice that we have replaced <code>cond</code> with <code>case</code>. Observe the differences between them. <code>case</code> allows us to compare the value of an expression (in thise case the value of <code>character</code>) against many patterns. Even though <code>cond</code> is more general, since we are comparing the value of <code>character</code> with multiple possible values, replacing it with <code>case</code> allows us to write a more concise and arguably better readable code.</li>
+<li>Just like we had a &quot;catch all&quot; phrase at the end of <code>cond</code>, for <code>case</code> we have <code>_ -&gt; :error</code> which will match <em>any</em> value of the <code>case</code> expression. Note that we are using <code>_ -&gt;</code> instead of <code>true -&gt;</code>. This is because <code>case</code> tries for matching a <em>pattern of value</em> than the <em>boolean value</em> of an expression after evaluation, as is the case for <code>cond</code>.</li>
+<li><p>Pattern matching is a very useful and frequently used feature of the Elixir language. If you remember Elixir calls <code>=</code>, the <em>match operator</em>. Let&#39;s try out somethings in IEx to dig a little deeper into pattern matching.</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; 1 = x
+(CompileError) iex:1: undefined function x/0
+iex(1)&gt; x = 1
+1
+iex(2)&gt; x
+1
+iex(3)&gt; 1 = x
+1
+iex(4)&gt; 2 = x
+** (MatchError) no match of right hand side value: 1</code></pre></div>
+
+<ul>
+<li>At a fresh IEX console, first we attempted to pattern match <code>1 = x</code>, but Elixir returned an error. This is because we haven&#39;t told elixir what value to <em>bind</em> to the variable <code>x</code>. That is to say the name <code>x</code> has not been yet given to any <em>value</em>, or that the variable <code>x</code> is not <em>assigned</em> yet.</li>
+<li>Next we <em>bind</em> the value <code>1</code> to <code>x</code> by typing in <code>x = 1</code> and Elixir says, &quot;OK, now the variable <code>x</code> has been <em>assigned</em> the value <code>1</code>.</li>
+<li>Let&#39;s double check. Typing in <code>x</code> into IEx returns the value <code>1</code>. Alright!</li>
+<li>Now for the mind bending twist. Typing in <code>1 = x</code>, returns the value <code>1</code>! Elixir is essentially saying, &quot;<em>Yes I was able to match the right hand side value (<code>x</code> which is <code>1</code>) to the left hand side value, <code>1</code></em>.</li>
+<li>So what happens if we try <code>2 = x</code>? Elixir promptly returns an error (<code>MatchError</code>). </li>
+<li>Pattern matching works not only for integers as we have seen here, but also for strings or even lists and more! We will see more creative uses of pattern matching as we go along.</li>
+</ul></li>
+<li><p>Coming to the function <code>rot13w</code> which takes 1 argument <code>word</code>. Its time to introduce to you another star feature of Elixir, <code>|&gt;</code>, the pipe operator. <code>|&gt;</code> <em>pipes</em> data (allows data to flow) from one expression/function into another function. Let&#39;s explore <code>|&gt;</code> in a fresh IEx console</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; &quot;CAESAR&quot; |&gt; String.downcase
+&quot;caesar&quot;
+iex(2)&gt; &quot;CAESAR&quot; |&gt; String.downcase |&gt; String.graphemes
+[&quot;c&quot;, &quot;a&quot;, &quot;e&quot;, &quot;s&quot;, &quot;a&quot;, &quot;r&quot;]</code></pre></div>
+
+<ul>
+<li><code>downcase</code> is a function defined in the <code>String</code> module that transforms an uppercased string into lowercase. It takes one string argument. <code>|&gt;</code> pipes the string <code>&quot;CAESAR&quot;</code> into the first (and the only) argument of String.downcase and the result is downcased <code>&quot;caesar&quot;</code>.</li>
+<li>Next we extend this <em>pipeline</em> by taking the output of <code>String.downcase</code> and passing it into the first (and as it happens, the only) argument of <code>String.graphemes</code> function. <code>graphemes</code> is another function in the <code>String</code> module which takes in a string input and returns the individual letters in the word as a list.</li>
+</ul></li>
+<li><p>Coming to the next stage in our &quot;pipeline&quot;, we come across a very useful function named <code>Enum.map</code>. <code>map</code> which belongs to the <code>Enum</code> module is an interesting function in that, the argument passed to <code>map</code> is another function.  So far we have seen only functions that takes datatypes like string or integer etc as argument. The ability to have functions that can take other functions as input makes Elixir somewhat special. Programming languages that inherently support this style of programming are generally called <em>functional programming languages</em>. And functions that takes other functions as inputs are known as <em>higher order functions</em>. You could say Elixir treats both data and function as first class citizens and this is one of the reaons why Elixir is a truly productive and fun programming language useful for build things in.</p></li>
+<li><p>Coming back to <code>Enum.map</code>, suppose we have a list of things. And suppose, we want to transform each item in the list in a certain way and want the result of this transformation of each item as an output list. What we could do in Elixir is, define how the transformation will work on an individual item as a function. Next we pass in the input list and this function to the <code>Enum.map</code> function. <code>Enum.map</code> will &quot;map&quot; the input list to the output list by applying the function passed in on each individual item in the input list. Let&#39;s make this clear using an example in IEx</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; Enum.map([&quot;c&quot;, &quot;a&quot;, &quot;e&quot;, &quot;s&quot;, &quot;a&quot;, &quot;r&quot;], &amp;String.upcase/1)
+[&quot;C&quot;, &quot;A&quot;, &quot;E&quot;, &quot;S&quot;, &quot;A&quot;, &quot;R&quot;]</code></pre></div>
+
+<ul>
+<li>The first argument to <code>Enum.map</code> is a list of letters of the word &quot;caesar&quot; all in lower case. The second argument to <code>Enum.map</code> is a function <code>String.upcase</code> which as you might guess, does the opposite of <code>String.downcase</code> function, i.e capitalize the input passed to it. <code>Enum.map</code> applies the <code>String.upcase</code> function to each letter in the list and returns the result as an output list.</li>
+<li>Notice how we have to use <code>&amp;</code> before the function name while passing in a function to another function in Elixir. Also notice the <code>/1</code>. In Elixir the &quot;full name&quot; of a function is to have both the module name (<code>String</code>) and the number of arguments that the function takes which is in this case 1, which is what the <code>/1</code> denotes. So Enum.map is &quot;fully specified&quot; in Elixir <code>Enum.map/2</code> because it takes two arguments.</li>
+</ul></li>
+<li><p>In our case, what we passed into <code>Enum.map</code> is the function we previously defined <code>TextAlchemy.rot13c/1</code> (We can drop the module name if we are referring to the function in the same module). The <em>first</em> argument to <code>Enum.map</code> is supplied by the <code>|&gt;</code> operator. The second argument, which is the function that is used for transforming individual elements of the list is specified as <code>&amp;rot13c/1</code>. The result is a list of characters, each rotated 13 positions to the left. You can verify it by trying it out in an IEx console. </p></li>
+<li><p>Finally we <code>|&gt;</code> the output of the <code>Enum.map</code> stage of our pipeline to <code>Enum.into/2</code>. Again, the output is passed in as the <em>first</em> argument for <code>Enum.into</code> function, the second argument being an empty string <code>&quot;&quot;</code>. <code>Enum.into</code> is useful for massaging data into a form that we desire. In this instance we want the list output from <code>map</code> transformed back into a string.</p></li>
+</ol>
+
+<p>See how we are using solution to simpler sub-problem in solving a bigger one? Also notice how we create a pipeline of functions (some that came included with Elixir and some that we wrote on our own) that transforms the input into the final result, in a series of smaller steps. We will continue to use this approach on our quest for an overall solution to decoding our Caesar cyper encypted sentence.</p>
+
+<h3 id="toc_6">Version 0.3</h3>
+
+<p>In this version, we will build up on the previous code by adding the top level function that will decode an entire sentence for us.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule TextAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides text manipulation related functions.
+  &quot;&quot;&quot;
+
+  @doc &quot;&quot;&quot;
+  Rotates a single character by 13 positions.
+  &quot;&quot;&quot;
+  def rot13c(character) do
+
+    case character do
+       &quot;a&quot; -&gt; &quot;n&quot;
+       &quot;b&quot; -&gt; &quot;o&quot;
+       &quot;c&quot; -&gt; &quot;p&quot;
+       &quot;d&quot; -&gt; &quot;q&quot;
+       &quot;e&quot; -&gt; &quot;r&quot;
+       &quot;f&quot; -&gt; &quot;s&quot;
+       &quot;g&quot; -&gt; &quot;t&quot;
+       &quot;h&quot; -&gt; &quot;u&quot;
+       &quot;i&quot; -&gt; &quot;v&quot;
+       &quot;j&quot; -&gt; &quot;w&quot;
+       &quot;k&quot; -&gt; &quot;x&quot;
+       &quot;l&quot; -&gt; &quot;y&quot;
+       &quot;m&quot; -&gt; &quot;z&quot;
+       &quot;n&quot; -&gt; &quot;a&quot;
+       &quot;o&quot; -&gt; &quot;b&quot;
+       &quot;p&quot; -&gt; &quot;c&quot;
+       &quot;q&quot; -&gt; &quot;d&quot;
+       &quot;r&quot; -&gt; &quot;e&quot;
+       &quot;s&quot; -&gt; &quot;f&quot;
+       &quot;t&quot; -&gt; &quot;g&quot;
+       &quot;u&quot; -&gt; &quot;h&quot;
+       &quot;v&quot; -&gt; &quot;i&quot;
+       &quot;w&quot; -&gt; &quot;j&quot;
+       &quot;x&quot; -&gt; &quot;k&quot;
+       &quot;y&quot; -&gt; &quot;l&quot;
+       &quot;z&quot; -&gt; &quot;m&quot;
+       _   -&gt; :error
+    end
+  end
+
+  @doc &quot;&quot;&quot;
+  Applies the rot13c function to all characters in a word
+  &quot;&quot;&quot;
+  def rot13w(word) do
+
+   word
+   |&gt; String.downcase
+   |&gt; String.graphemes
+   |&gt; Enum.map(&amp;rot13c/1)
+   |&gt; Enum.into(&quot;&quot;)
+
+  end
+
+  @doc &quot;&quot;&quot;
+  Encodes or decodes a string (of words) using rot13
+  &quot;&quot;&quot;
+  def rot13(sentence) do
+
+    sentence
+    |&gt; String.split
+    |&gt; Enum.map(&amp;rot13w/1)
+    |&gt; Enum.join(&quot; &quot;)
+  end
+end
+
+# Decoding the second line from the Alchemist&#39;s message
+IO.puts TextAlchemy.rot13(&quot;Gur havirefr pbafcverf gb uryc gur Qernzre&quot;)
+</code></pre></div>
+
+<h4 id="toc_7">Notes on Version 0.3</h4>
+
+<ol>
+<li>We will reach for our favorite <code>|&gt;</code> based pipeline approach for the <code>rot13</code> function that will take in a sentence and return the decoded sentence for us.</li>
+<li><code>String.split/1</code> splits a sentence into a list of words. </li>
+<li>We pass in <code>rot13w/1</code> function that we built in the previous section to <code>Enum.map</code> so that we transform (decrypt) each word in the list.</li>
+<li>We use <code>Enum.join/2</code> which will join the words in the list into a string with the specified character plugged in between (which in this case is a space character <code>&quot; &quot;</code>). </li>
+</ol>
+
+<p>Run this code in a terminal and read the decoded sentence for yourselves! I won&#39;t spoil the fun by printing the result here.</p>
+
+<h3 id="toc_8">Version 0.4</h3>
+
+<p>In general, we don&#39;t want to be copy pasting the text from the Alchemist&#39;s scroll into our code. Ideally we would love our program to read the text from a file containing the message and decrypt the contents for us. We will explore how to use the file reading capabilities of Elixir in our final version.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule TextAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides text manipulation related functions.
+  &quot;&quot;&quot;
+
+  @doc &quot;&quot;&quot;
+  Rotates a single character by 13 positions.
+  &quot;&quot;&quot;
+  def rot13c(character) do
+
+    case character do
+       &quot;a&quot; -&gt; &quot;n&quot;
+       &quot;b&quot; -&gt; &quot;o&quot;
+       &quot;c&quot; -&gt; &quot;p&quot;
+       &quot;d&quot; -&gt; &quot;q&quot;
+       &quot;e&quot; -&gt; &quot;r&quot;
+       &quot;f&quot; -&gt; &quot;s&quot;
+       &quot;g&quot; -&gt; &quot;t&quot;
+       &quot;h&quot; -&gt; &quot;u&quot;
+       &quot;i&quot; -&gt; &quot;v&quot;
+       &quot;j&quot; -&gt; &quot;w&quot;
+       &quot;k&quot; -&gt; &quot;x&quot;
+       &quot;l&quot; -&gt; &quot;y&quot;
+       &quot;m&quot; -&gt; &quot;z&quot;
+       &quot;n&quot; -&gt; &quot;a&quot;
+       &quot;o&quot; -&gt; &quot;b&quot;
+       &quot;p&quot; -&gt; &quot;c&quot;
+       &quot;q&quot; -&gt; &quot;d&quot;
+       &quot;r&quot; -&gt; &quot;e&quot;
+       &quot;s&quot; -&gt; &quot;f&quot;
+       &quot;t&quot; -&gt; &quot;g&quot;
+       &quot;u&quot; -&gt; &quot;h&quot;
+       &quot;v&quot; -&gt; &quot;i&quot;
+       &quot;w&quot; -&gt; &quot;j&quot;
+       &quot;x&quot; -&gt; &quot;k&quot;
+       &quot;y&quot; -&gt; &quot;l&quot;
+       &quot;z&quot; -&gt; &quot;m&quot;
+       _   -&gt; :error
+    end
+  end
+
+  @doc &quot;&quot;&quot;
+  Applies the rot13c function to all characters in a word
+  &quot;&quot;&quot;
+  def rot13w(word) do
+
+   word
+   |&gt; String.downcase
+   |&gt; String.graphemes
+   |&gt; Enum.map(&amp;rot13c/1)
+   |&gt; Enum.into(&quot;&quot;)
+
+  end
+
+  @doc &quot;&quot;&quot;
+  Encodes or decodes a string (of words) using rot13
+  &quot;&quot;&quot;
+  def rot13(sentence) do
+
+    sentence
+    |&gt; String.split
+    |&gt; Enum.map(&amp;rot13w/1)
+    |&gt; Enum.join(&quot; &quot;)
+  end
+end
+
+# Decoding the Alchemist&#39;s message
+# --------------------------------
+
+# Reading the filename containing the message from commandline
+[filename | _tail] = System.argv
+
+# Open the file for reading
+{:ok, file} = File.open(filename, [:read])
+
+# Read the first line of the message from the file
+line_1 = IO.read(file, :line) |&gt; String.trim
+
+# Print the first line from the Alchemist&#39;s message, as it is
+IO.puts line_1
+
+# Print the second line from the Alchemist&#39;s message, after decoding
+line_2 = IO.read(file, :line) |&gt; String.trim
+IO.puts TextAlchemy.rot13(line_2)
+</code></pre></div>
+
+<h4 id="toc_9">Notes on Version 0.4</h4>
+
+<p>Lines 1 to 65 are unchanged. Let&#39;s focus on the rest. </p>
+
+<ol>
+<li>The filename of the file (or scroll) containing the message needs to be passed into our program as an input. We have two options to do this. 1) Pass in the filename as an <em>argument</em> to the program, before the program runs. 2) Read in the filename as a <em>user input</em> while the program is running, using <code>IO.gets</code>, the counterpart of <code>IO.puts</code>. For now let&#39;s explore the command line argument way of doing this.</li>
+<li><p><code>System.argv</code> is an included function in Elixir which will return the command line arguments passed in as a list. What I mean by commmand line argument is, the set of strings passed in while running the Elixir program at the command line. For example, so far we ran our elixir programs by entering the following into the terminal</p>
+
+<div><pre class="line-numbers"><code class="language-terminal">elixir 7.ex</code></pre></div>
+
+<p>We can optionally pass in stuff to this program that we are about to start running like so:</p>
+
+<div><pre class="line-numbers"><code class="language-terminal">elixir 7.ex scroll_1 option_a option_b</code></pre></div>
+
+<p><code>System.argv</code> will return the list <code>[&quot;scroll_1&quot;, &quot;option_a&quot;, &quot;option_b&quot;]</code> in this case.</p></li>
+<li><p>Line 71 is another creative example of pattern matching that once we understand clearly, will make life simpler for us. On the LHS (left hand side) of the match operator <code>=</code>, we have <code>[filename | _tail]</code>. We know the RHS (right hand side is a list <code>[&quot;filename&quot;, &quot;option1&quot;, &quot;option2&quot;]</code>. Elixir uses the <code>|</code> within a list to separate what it calls the <code>head</code> and <code>tail</code> of a list. <code>head</code> of a list is simply the very first element in the list. <code>tail</code> is a <em>list</em> contiaing the rest of the items in the list (aka &quot;the tail&quot;). So while pattern matching Elixir will bind the value <code>&quot;scroll_1&quot;</code> to <code>filename</code> and the <em>list</em> <code>[&quot;option_a&quot;, &quot;option_b&quot;]</code> to <code>_tail</code>. We have the underscore <code>_</code> in <code>_tail</code> since we don&#39;t plan to use the <code>_tail</code>. We are only interested in the first element of the argument list which will contain the filename of the scroll contiaing the message from the Alchemist.</p></li>
+<li><p>On Line 74, we encounter <strong>tuples</strong> for the first time. <strong>Tuple</strong> is another basic datatype in Elixir. Tuples are used to group together simpler data types into one unit. Tuples are like lists in that they can contain any value, be it an atom, string etc. While lists are mostly used when the number of elements it contains may grow or shrink during the program&#39;s life, tuples are best used when the size (the number of elements in a tuple) is known before the program runs. A very common use case for tuples is to return more than one value from a functionc all, as is the case here.</p></li>
+<li><p>On Line 74, we encounter a case of pattern matching involving a tuple. The function <code>File.open(filename, [:read])</code> will open a file specified by the filename for reading and return the result as either <code>{:ok, file}</code> or another tuple containing the error message. <code>file</code> holds what is more generally known as a <em>file reference</em>, a data type used by Elixir that points to a file on our computer. Elixir will pattern match and check if the function call succeeded (the first element in case of success should be the atom <code>:ok</code>) and if so, bind the variable <code>file</code> to the <em>file reference</em> returned by the <code>File.open</code> function.</p></li>
+<li><p>We then proceed to read from the file using <code>IO.read</code> function. It takes two aguments, the filename and a list of options. We pass in the atom :read to specify that we are opening this file for reading. </p></li>
+<li><p><code>String.trim</code> removes newline character at the end of the line being read. Else we would have two newlines when we print it out. We read the first line and print it out as is. The second line, which was encoded, is printed out after decoding it.</p></li>
+<li><p>For all the functions we have seen so far, from the modules <code>String</code>, <code>Enum</code>, <code>File</code>, <code>IO</code> etc, it is very advisable to read through the documentation to learn more about how to use the function effectively. Documentation will describe the input and output parameters, default behaviour of the function, optional parameters that can be passed into alter the default behavior of the functions etc. Documentation is readily available for all Elixir modules at <a href="https://hexdocs.pm/">hexdocs</a>. For example you can view documentation about functions in the <a href="https://hexdocs.pm/elixir/Enum.html">Enum module here</a>. Elixir comes with a lot of &quot;batteries&quot; included. For many thing you may want to do, there might already be a function in one of the modules bundled with Elixir. The investment you put in to get familiar with the documentation will pay high returns in your journey of elixir &amp; programming mastery.</p></li>
+</ol>
+
+<h2 id="toc_10">Running and Output</h2>
+
+<p>Create a plain text file named <code>message.txt</code> and copy  the message from the alchemist into the text file. Remember to pass in this filename to your program while running the final version of the code.</p>
+
+<div><pre class="line-numbers"><code class="language-terminal">Charlie@Aruns-MacBook-Pro-2 ~/studios/bookofemerald/lib/ex $ elixir 7.ex message.txt
+                                       
+Thirteen times of what you have Left, you owe Caesar
+the universe always conspires to help the dreamer</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.elixir={comment:{pattern:/(^|[^#])#(?![{#]).*/m,lookbehind:!0},regex:/~[rR](?:("""|'''|[\/|"'])(?:\\.|(?!\1)[^\\])+\1|\((?:\\\)|[^)])+\)|\[(?:\\\]|[^\]])+\]|\{(?:\\\}|[^}])+\}|<(?:\\>|[^>])+>)[uismxfr]*/,string:[{pattern:/~[cCsSwW](?:("""|'''|[\/|"'])(?:\\.|(?!\1)[^\\])+\1|\((?:\\\)|[^)])+\)|\[(?:\\\]|[^\]])+\]|\{(?:\\\}|#\{[^}]+\}|[^}])+\}|<(?:\\>|[^>])+>)[csa]?/,inside:{}},{pattern:/("""|''')[\s\S]*?\1/,inside:{}},{pattern:/("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/,inside:{}}],atom:{pattern:/(^|[^:]):\w+/,lookbehind:!0,alias:"symbol"},"attr-name":/\w+:(?!:)/,capture:{pattern:/(^|[^&])&(?:[^&\s\d()][^\s()]*|(?=\())/,lookbehind:!0,alias:"function"},argument:{pattern:/(^|[^&])&\d+/,lookbehind:!0,alias:"variable"},attribute:{pattern:/@[\S]+/,alias:"variable"},number:/\b(?:0[box][a-f\d_]+|\d[\d_]*)(?:\.[\d_]+)?(?:e[+-]?[\d_]+)?\b/i,keyword:/\b(?:after|alias|and|case|catch|cond|def(?:callback|exception|impl|module|p|protocol|struct)?|do|else|end|fn|for|if|import|not|or|require|rescue|try|unless|use|when)\b/,"boolean":/\b(?:true|false|nil)\b/,operator:[/\bin\b|&&?|\|[|>]?|\\\\|::|\.\.\.?|\+\+?|-[->]?|<[-=>]|>=|!==?|\B!|=(?:==?|[>~])?|[*\/^]/,{pattern:/([^<])<(?!<)/,lookbehind:!0},{pattern:/([^>])>(?!>)/,lookbehind:!0}],punctuation:/<<|>>|[.,%\[\]{}()]/},Prism.languages.elixir.string.forEach(function(e){e.inside={interpolation:{pattern:/#\{[^}]+\}/,inside:{delimiter:{pattern:/^#\{|\}$/,alias:"punctuation"},rest:Prism.util.clone(Prism.languages.elixir)}}}});
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
