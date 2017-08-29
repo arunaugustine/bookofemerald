@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>6</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Ex 6: Atoms and Modules</h1>
+
+<p>&quot;Alchemy is both art and science&quot;, the Alchemist once told the boy. </p>
+
+<p>&quot;Its the science of breaking down a substance into simpler constituents, refining it until only the most basic elements remain, identifying or naming these elements and finally re-composing these elements to form a higher quality substance&quot;. </p>
+
+<p>&quot;So where is art in this?&quot;, the boy asked. </p>
+
+<p>&quot;Art is knowing which substance to start with. Art is knowing when to stop refining. Art is naming the elements right. And, art is choosing how best to combine the elements again.&quot;</p>
+
+<h2 id="toc_1">Seeking to Understand</h2>
+
+<blockquote>
+<p>Begin with the end in mind. But if you don&#39;t know how to begin, start with the middle. Maybe its a circle and has no beginning or end. All it may have is the <em>nearest</em> middle.</p>
+
+<p>-- Charlie</p>
+</blockquote>
+
+<ol>
+<li><p>In the English language we have a progression from <em>alphabet</em> to <em>words</em> to <em>sentences</em> to <em>paragraphs</em> to <em>chapters</em> to <em>books</em>. To use a loose analogy, in programming we correspondingly have <strong>symbols</strong>, <strong>basic data types</strong>, <strong>expressions</strong>, <strong>functions</strong>, <strong>modules</strong> and <strong>applications</strong>.</p></li>
+<li><p>Numbers like <code>1</code>, <code>2.5</code> etc can be thought of as symbols having the integer value of 1, floating point value of 2.5 etc. They are also called <em>constants</em>. This is because their <em>value</em> does not change over time. <em>Value</em> is what Elixir returns (e.g line 2 and 4 below) as a result of evaluating an expression or symbol (lines 1 and 3 below). In the case of constants, each time you type in the following into IEx, you get the same results:</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; 1
+1
+iex(2)&gt; 2.5
+2.5</code></pre></div></li>
+<li><p><strong>Atoms</strong> are constants where their name is their own value.</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; :hello
+:hello
+iex(2)&gt; :ok
+:ok
+iex(3)&gt; IO.puts :ok
+ok
+:ok
+iex(4)&gt; IO.puts &quot;ok&quot;
+ok
+:ok</code></pre></div></li>
+<li><p>One use case of <strong>atoms</strong> is to denote success or failure of a function call. For instance, as shown above, <code>IO.puts</code> will return <code>:ok</code> if it was successful in printing the given string to the screen. Remember the mystery &quot;ok&quot; from our last exercise? (Ex 5, Output Observation 5).</p></li>
+</ol>
+
+<h2 id="toc_2">Coding Exercise</h2>
+
+<p>In the following coding exercise, we will learn about creating our own <strong>functions</strong>. <strong>Function</strong> is another name for <em>procedure that manipulates data</em>. Functions always come packaged in <strong>modules</strong>, much like how paragraphs in an english text are grouped into chapters. You will come across some keywords like <code>defmodule</code>, <code>def</code>, <code>do</code>, <code>end</code> etc in the code. Pay close attention to how Elixir uses these keywords to <em>specify</em> functions and modules. In general, the rules around how to use these keywords comprises of what is known as <em>syntax</em> of a programming language. We won&#39;t try to study these rules per-say. Instead, as usual, we will learn through practice.</p>
+
+<h3 id="toc_3">Version 0.1</h3>
+
+<p>Type in and save the following code in a file named <code>6.ex</code> and run it using <code>elixir 6.ex</code>. Observe the output (not listed here).</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule MathAlchemy do
+
+  def mod(a, b) do
+    d = div(a, b)
+    a - (b * d)
+  end
+
+end # End module
+
+IO.puts MathAlchemy.mod(5,3)
+</code></pre></div>
+
+<h4 id="toc_4">Notes on Version 0.1</h4>
+
+<ol>
+<li><code>defmodule</code> specifies a module. Module names are to be <em>CamelCase</em> (First letter of everyword is capitalized, with punctuations and spaces removed). The <em>body</em> or contents of the module is surrounded with <code>do</code> and <code>end</code>.</li>
+<li><code>def</code> specifies a function. <code>do</code> and <code>end</code> surrounds the function <em>body</em>. </li>
+<li>The variables inside the brackets <code>( )</code> are called function <em>parameters</em>. They are placeholders for <em>input</em> data that the expressions within the function <em>body</em> transforms to an <em>output</em> which is <em>returned</em> by the function.</li>
+<li>Function names are to be <em>snake_case</em> (All small letters with <code>_</code> between words).</li>
+<li>The value of the very last expression within the function <em>body</em> is what is considered as the output value of the function which is <em>returned</em>. For instance, here the resultant value of <code>a - (b * d)</code> which is an integer value is returned by the <code>mod</code> function.</li>
+<li>As seen on line 10, a function is referenced outside the module by referencing the module name (<code>MathAlchemy</code>), followed by a dot <code>.</code> and then the function name along with the input parameters, <code>mod(5,3)</code>.</li>
+<li><code>div</code> is a built-in Elixir function that performs integer division (fractional part after decimal point of the quotient is not considered). Try <code>div( 5, 2)</code> and perhaps a few other examples in an IEx shell by yourself to really understand how <code>div</code> works. Also try <code>h div</code>. IEx will printout helpful documentation (<code>h</code> for help) along with examples for the function <code>div</code>.</li>
+<li>&quot;Built-in&quot; functions in Elixir are bundled in the <code>Kernel</code> module. Functions in the <code>Kernel</code> module are special in that you can use them directly anywhere in your Elixir code without using <code>Kernel.</code> (dot syntax) before the function name. </li>
+</ol>
+
+<h3 id="toc_5">Version 0.2</h3>
+
+<p>Let us improve on version 0.1 by adding in some code documentation. In the same <code>6.ex</code> source code file, add or modify lines of code as follows. If you would rather have some practice typing in code, you may delete the contents that you have so far for version 0.1 of <code>6.ex</code> and start fresh with version 0.2. The decision is upto you.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule MathAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides alchemy related math procedures.
+
+  Important functions include mod (modulo or remainder after integer division),
+  gcd (greatest common divisor), prime? (is it a prime number?) etc.
+  &quot;&quot;&quot;
+  # --------------------------------------------------------------
+
+  @doc &quot;&quot;&quot;
+  Calculates the mod (modulo or remainder after integer division).
+
+  For instance integer division of 5 by 2 is equal to 2 with remainder 1.
+  So for example:
+
+    iex&gt; MathAlchemy.mod(5,2)
+    1
+  &quot;&quot;&quot;
+  def mod(a, b) do
+    q = div(a, b) # q for quotient
+    a - (b * q)
+  end
+
+end # End module
+
+IO.puts MathAlchemy.mod(5, 2)
+IO.puts MathAlchemy.mod(5, 3)
+IO.puts MathAlchemy.mod(5, 5)
+</code></pre></div>
+
+<h4 id="toc_6">Notes on Version 0.2</h4>
+
+<ol>
+<li>Comments (lines starting with <code>#</code>) offer one way to document code, as we have already seen. For a more specific use case of documenting modules <code>@moduledoc</code> is used. Likewise, <code>@doc</code> is used to document functions.</li>
+<li><p>Triple quotes <code>&quot;&quot;&quot;</code> are used to create <em>multi-line</em> text that preserves linebreaks, any whitespace (space or tab) including any indentation added for readability. The text you create will print just as you typed in, space, tab, newline character and all.</p>
+
+<div><pre class="line-numbers"><code class="language-iex">iex(1)&gt; IO.puts &quot;&quot;&quot;
+...(1)&gt; A multi-line text
+...(1)&gt; is also called
+...(1)&gt; a heredoc.
+...(1)&gt; &quot;&quot;&quot;
+A multi-line text
+is also called
+a heredoc.
+
+:ok</code></pre></div></li>
+<li><p>Notice how we added example usage of the function <code>mod</code> on line 16. Particularly, there are two spaces added before <code>iex</code> and the evaluated value just below the expression. We will see <em>why</em>, soon.</p></li>
+<li><p>We have added more <code>IO.puts</code> to test a few other sample inputs to convince ourselves that our <code>mod</code> function is working as expected. It&#39;s important to test for a variety of inputs including edge cases like passing in <code>0</code> or negative numbers as values of <code>a</code> or <code>b</code>. We will improve our <code>mod</code> function implementation to handle negative numbers in version 0.3</p></li>
+</ol>
+
+<h3 id="toc_7">Version 0.3</h3>
+
+<p>Carefully read the code listed below line by line. Some existing lines of code has been modified. New lines of code and comments have been added. Make sure when you update your <code>6.ex</code> file from version 0.2 to 0.3, the final code looks like the version 0.3 code listed below.</p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule MathAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides alchemy related math procedures.
+
+  Important functions include mod (modulo or remainder after integer division),
+  gcd (greatest common divisor), prime? (is it a prime number?) etc.
+  &quot;&quot;&quot;
+
+  # --------------------------------------------------------------
+
+  @doc &quot;&quot;&quot;
+  Calculates the mod (modulo or remainder after integer division).
+
+  For instance integer division of 5 by 2 is equal to 2 with remainder 1.
+  So for example:
+
+    iex&gt; MathAlchemy.mod(5,2)
+    1
+  &quot;&quot;&quot;
+  def mod(a, b) do
+    q = div( abs(a), b) # q for quotient
+    abs(a) - (b * q)
+  end
+
+  @doc &quot;&quot;&quot;
+  Run tests for mod function. We could potentially
+  add more tests here in the future.
+  &quot;&quot;&quot;
+
+  def test_mod() do
+    IO.puts &quot;mod(5,2) expected: 1  actual: #{MathAlchemy.mod(5, 2)}&quot;
+    IO.puts &quot;mod(-5,2) expected: 1 actual: #{MathAlchemy.mod(-5, 2)}&quot;
+    IO.puts &quot;mod(5,-3) expected: 2  actual: #{MathAlchemy.mod(5, -3)}&quot;
+    IO.puts &quot;mod(5,5) expected: 0  actual: #{MathAlchemy.mod(5, 5)}&quot;
+    :tests_completed
+  end
+
+end # End module
+
+MathAlchemy.test_mod()
+</code></pre></div>
+
+<h4 id="toc_8">Notes on Version 0.3</h4>
+
+<ol>
+<li>On line 21, instead of passing in plain <code>a</code> as input, we pass in the result of calling the <code>abs</code> function on <code>a</code> as input parameter to <code>mod</code>. <code>abs</code> returns the absolute value of a number (negative signs are ignored). Explore how <code>abs</code> works on an IEx shell. Perhaps try using <code>h abs</code> to read the documentation and example usages of <code>abs</code> function.</li>
+<li>We have also added a new function named <code>test_mod</code> which takes in zero input parameters. We have moved all our test <code>IO.puts</code> expressions into this one function. Combining expressions into functions is the analogue of combinging sentences into paragraphs in English. </li>
+<li>Our <code>test_mod</code> function returns an <strong>atom</strong> called <code>:tests_completed</code>. This is a way to signal the expression that &quot;called&quot; this function (in our case line 40) that it has successfully completed its &quot;mission&quot;.</li>
+<li>We have added a few more test scenarios, now including negative numbers as inputs to <code>mod</code> function. Verify that the results are correct from the output by running <code>elixir 6.ex</code> after saving your work. Output from this version of code is not listed here, as with version 0.1 and 0.2. An important skill to aquire is of convicing ourselves that our work is right by checking the steps and playing with the output we get rather than comparing the result with an &quot;official&quot; output. This way you will learn to trust yourselves and build confidence in your own coding and debugging skills.<br></li>
+</ol>
+
+<h3 id="toc_9">Version 0.4</h3>
+
+<p>What happens if <code>0</code> is passed in as input for <code>b</code>? Try it out with version 0.3 and notice what happens. In version 0.4 we will improve our code further to handle this case correctly. Also we will figure out a way to make our test case writing a little easier. As usual, make changes to the same file <code>6.ex</code>, by carefully adding or modifying lines of code to match the version 0.4 code listed below. </p>
+
+<div><pre class="line-numbers"><code class="language-elixir">defmodule MathAlchemy do
+  @moduledoc &quot;&quot;&quot;
+  Provides alchemy related math procedures.
+
+  Important functions include mod (modulo or remainder after integer division),
+  gcd (greatest common divisor), prime? (is it a prime number?) etc.
+  &quot;&quot;&quot;
+  # --------------------------------------------------------------
+
+  @doc &quot;&quot;&quot;
+  Calculates the mod (modulo or remainder after integer division).
+
+  For instance integer division of 5 by 2 is equal to 2 with remainder 1.
+  So for example:
+
+    iex&gt; MathAlchemy.mod(5,2)
+    1
+  &quot;&quot;&quot;
+  def mod(a, b) when b &gt; 0 do
+    q = div( abs(a), b) # q for quotient
+    abs(a) - (b * q)
+  end
+
+  def mod(_a, b) when b &lt;= 0 do
+    :error
+  end
+
+  @doc &quot;&quot;&quot;
+  Run tests for mod function. We could potentially
+  add more test here in the future.
+  &quot;&quot;&quot;
+  def test_mod() do
+    IO.puts mod_test_case(5, 2, 1)
+    IO.puts mod_test_case(-5, 2, 1)
+    IO.puts mod_test_case(5, 3, 2)
+    IO.puts mod_test_case(5, 5, 0)
+    IO.puts mod_test_case(-5, 4, 1)
+    IO.puts mod_test_case(-5, -4, :error)
+    IO.puts mod_test_case(5, 0, :error)
+    :tests_completed
+  end
+
+  # This is a private function which can be used only within MathAlchemy module.
+  # `mod_test_case` takes as input parameters, the numbers a, b and the
+  # expected output from mod and returns a test string to be printed out
+  defp mod_test_case(a,b, expected) do
+    &quot;mod(#{a},#{b}) expected: #{expected}  actual: #{mod(a, b)}&quot;
+  end
+
+end # End module
+
+MathAlchemy.test_mod()
+</code></pre></div>
+
+<h4 id="toc_10">Notes on Version 0.4</h4>
+
+<ol>
+<li>On line 19, notice how we have added <code>when b &gt; 0</code> to the <code>mod</code> function definition. <code>when</code> is how you specify <strong>guard clauses</strong>. Guard clauses allow the function to be executed only when the condition specified evaluates to <code>true</code>. That is this function definition for <code>mod</code> is used only if <code>b &gt; 0</code>. </li>
+<li>On line 24, we have <em>another</em> <code>mod</code> definition. (Function definition is another name for <em>specifying</em> a function). Notice how the guard clause for this second <code>mod</code> function declaration handles the <em>other</em> case of <code>b &lt;= 0</code>. </li>
+<li>The second clause of <code>mod</code> definition on line 24 to 26 ensures that if we pass in <code>0</code> or a negative number of <code>b</code>, the function returns <code>:error</code> (an <strong>atom</strong>).</li>
+<li>Did you notice the <code>_</code> underscore before <code>a</code> on line 24? This is because we want to let Elixir know that we can safely ignore the value of <code>a</code>. Irrespective of what the value of <code>a</code> is an <code>:error</code> is returned if <code>b</code> is <code>0</code> or negative. See how <code>a</code> appears no where in the function body. You could have also just written <code>(_ , b)</code> but then that would have been confusing to your future readers. Hence we include the variable name just after the <code>_</code> even though Elixir does not require us to.</li>
+<li>Instead of repeating the same test string over and over, we have delegated generating the test string to a function named <code>mod_test_case</code>.</li>
+<li>Notice how <code>mod_test_case</code> is defined using <code>defp</code>. <code>defp</code> is how you create <strong>private</strong> functions. Private functions can only be used by functions defined in the same module. They are not &quot;visible&quot; outside the module.</li>
+<li><code>mod_test_case</code> takes 3 inputs: <code>a</code> and <code>b</code> which are the same as inputs to <code>mod</code> and <code>expected</code> which is the result that we expect <code>mod</code> to return when we pass in <code>a</code> and <code>b</code>. Notice how we construct a test string using <code>#{}</code> interpolation. Also notice how we call <code>mod_test_case</code> function on lines 33 to 39 to cover a wide variety of test inputs. When the program runs, we should be able to visually inspect the output and decide whether <code>mod</code> is working correctly or not.</li>
+<li>Notice how the last expression within the function definition is the <strong>return</strong> value of the function. Hence line 21 of the first clause of <code>mod</code> function definition returns a number and line 25 of the second clause of <code>mod</code> function definition returns an atom. The function <code>test_mod</code> returns an atom on line 40 and the private function <code>mod_test_case</code> returns a <strong>string</strong>.</li>
+</ol>
+
+<h2 id="toc_11">Running and Output</h2>
+
+<p>Run the final <code>6.ex</code> file using <code>elixir 6.ex</code> and compare your output with the one listed below.</p>
+
+<div><pre class="line-numbers"><code class="language-output">Charlie@Aruns-MacBook-Pro-2 ~/studios/bookofemerald/lib/ex $ elixir 6.ex                             
+mod(5,2) expected: 1  actual: 1
+mod(-5,2) expected: 1  actual: 1
+mod(5,3) expected: 2  actual: 2
+mod(5,5) expected: 0  actual: 0
+mod(-5,4) expected: 1  actual: 1
+mod(-5,-4) expected: error  actual: error
+mod(5,0) expected: error  actual: error</code></pre></div>
+
+<h2 id="toc_12">Version by Version</h2>
+
+<blockquote>
+<p>“Thirty years ago my older brother, who was ten years old at the time, was trying to get a report written on birds that he&#39;d had three months to write, which was due the next day. We were out at our family cabin in Bolinas, and he was at the kitchen table close to tears, surrounded by binder paper and pencils and unopened books about birds, immobilized by the hugeness of the task ahead. Then my father sat down beside him put his arm around my brother&#39;s shoulder, and said, <strong>&quot;Bird by bird, buddy. Just take it bird by bird.”</strong> </p>
+
+<p>― Anne Lamott, Bird by Bird: Some Instructions on Writing and Life</p>
+</blockquote>
+
+<p>Writing code is almost always an exercise of progressively improving on our work, version by version. Programming is nothing but translating our thoughts into a language for the computer to execute on our behalf. And just like in writing, the thoughts coalese and organize themselves in the process of writing it out. So don&#39;t worry or let your brain freeze over how big a task you are starting out on. Pick one starting point and begin. Code a little. Test a little. Build your work of art, <em>version by version</em>.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.elixir={comment:{pattern:/(^|[^#])#(?![{#]).*/m,lookbehind:!0},regex:/~[rR](?:("""|'''|[\/|"'])(?:\\.|(?!\1)[^\\])+\1|\((?:\\\)|[^)])+\)|\[(?:\\\]|[^\]])+\]|\{(?:\\\}|[^}])+\}|<(?:\\>|[^>])+>)[uismxfr]*/,string:[{pattern:/~[cCsSwW](?:("""|'''|[\/|"'])(?:\\.|(?!\1)[^\\])+\1|\((?:\\\)|[^)])+\)|\[(?:\\\]|[^\]])+\]|\{(?:\\\}|#\{[^}]+\}|[^}])+\}|<(?:\\>|[^>])+>)[csa]?/,inside:{}},{pattern:/("""|''')[\s\S]*?\1/,inside:{}},{pattern:/("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/,inside:{}}],atom:{pattern:/(^|[^:]):\w+/,lookbehind:!0,alias:"symbol"},"attr-name":/\w+:(?!:)/,capture:{pattern:/(^|[^&])&(?:[^&\s\d()][^\s()]*|(?=\())/,lookbehind:!0,alias:"function"},argument:{pattern:/(^|[^&])&\d+/,lookbehind:!0,alias:"variable"},attribute:{pattern:/@[\S]+/,alias:"variable"},number:/\b(?:0[box][a-f\d_]+|\d[\d_]*)(?:\.[\d_]+)?(?:e[+-]?[\d_]+)?\b/i,keyword:/\b(?:after|alias|and|case|catch|cond|def(?:callback|exception|impl|module|p|protocol|struct)?|do|else|end|fn|for|if|import|not|or|require|rescue|try|unless|use|when)\b/,"boolean":/\b(?:true|false|nil)\b/,operator:[/\bin\b|&&?|\|[|>]?|\\\\|::|\.\.\.?|\+\+?|-[->]?|<[-=>]|>=|!==?|\B!|=(?:==?|[>~])?|[*\/^]/,{pattern:/([^<])<(?!<)/,lookbehind:!0},{pattern:/([^>])>(?!>)/,lookbehind:!0}],punctuation:/<<|>>|[.,%\[\]{}()]/},Prism.languages.elixir.string.forEach(function(e){e.inside={interpolation:{pattern:/#\{[^}]+\}/,inside:{delimiter:{pattern:/^#\{|\}$/,alias:"punctuation"},rest:Prism.util.clone(Prism.languages.elixir)}}}});
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
